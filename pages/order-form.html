@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1> Glasses World Wide </h1>
+  <h2> Order: </h2>
+    <p> Order Information goes here </p>
+  <h2> Order Form </h2>
+    <form name="myForm">
+      First Name: <input type="text" name="firstName">
+      </br>
+      Last Name: <input type="text" name="lastName">
+      </br>
+      Phone Number: <input type="text" name="phoneNumber">
+      </br>
+      Shipping Address: <input type="text" name="shippingAddress">
+      </br>
+      Credit Card Number : <input type="text" name="creditCardNumber">
+      </br>
+      <label>Shipping Methods: </label>
+      </br>
+
+      <input type="radio" name="shippingMethod" id="overnight" value="overnight" />
+      <label for="overnight">overnight</label>
+      <br/>
+      <input type="radio" name="shippingMethod" id="2-days expedited" value="2-days expedited" />
+      <label for="2-days expedited">2-days expedited</label>
+      <br/>
+      <input type="radio" name="shippingMethod" id="6-days ground" value="6-days ground" />
+      <label for="6-days ground">6-days ground</label>
+      <br/>
+
+      <button type="button" onclick="validateForm()"> Submit </button>
+    </form>
+  <p id = formInformation>  </p>
+</body>
+</html>
+
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["firstName"].value;
+  document.getElementById('formInformation').innerHTML = x;
+}
+
+</script>
