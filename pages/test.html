@@ -38,6 +38,17 @@ article {
     padding: 1em;
     overflow: hidden;
 }
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
 </style>
 </head>
 <body>
@@ -63,10 +74,90 @@ article {
   <h1>Ray Bans</h1>
   <p>$12.00</p>
 </article>
+<div id = 'products'></div>
 
-<footer>Sorry Michael I just copied this style from W3Schools :( )</footer>
+<footer>Sorry Michael I just copied this style from W3Schools :( </footer>
 
 </div>
 
 </body>
 </html>
+
+<script>
+var products = [
+  {
+    productPicture: 'Glass 1.jpeg',
+    productName: 'Sunset Glasses',
+    productPrice: '60.00'
+  },
+  {
+    productPicture: 'Glass 2.jpeg',
+    productName: 'Science Lab',
+    productPrice: '69.99'
+  },
+  {
+    productPicture: 'Glass 3.png',
+    productName: 'Runner Glasses',
+    productPrice: '79.99'
+  },
+  {
+    productPicture: 'Glass 4.png',
+    productName: 'Beach Paradise',
+    productPrice: '89.99'
+  },
+  {
+    productPicture: 'Glass 5.jpg',
+    productName: 'Protective Glasses',
+    productPrice: '99.99'
+  },
+  {
+    productPicture: 'Glass 6.jpg',
+    productName: 'Classic RayBans',
+    productPrice: '120.99'
+  },
+  {
+    productPicture: 'Glass 7.jpg',
+    productName: 'FBI Glasses',
+    productPrice: '75.99'
+  },
+  {
+    productPicture: 'Glass 8.jpg',
+    productName: 'The Magic School Bus Glasses',
+    productPrice: '86.99'
+  },
+  {
+    productPicture: 'Glass 9.jpg',
+    productName: 'Sci-Fi Glasses',
+    productPrice: '45.99'
+  },
+  {
+    productPicture: 'Glass 10.jpg',
+    productName: 'Beach Horizon',
+    productPrice: '20.99'
+  }
+]
+var i;
+var listOfProducts = "<table>";
+listOfProducts += "<tr><th>Product image</th><th>Product Name</th><th>Product Price</th><th>Additional Info</th></tr>"
+for (i = 0; i < products.length; i++){
+  listOfProducts += "<tr>"
+    + "<td>" + "<img id = '" + products[i].productPicture + "' src = 'resource/"
+    + products[i].productPicture
+    + "' width=150 height=150"
+    + " onmouseover = 'document.getElementById(\""+ products[i].productPicture + "\").width = 300;"
+    + "document.getElementById(\""+ products[i].productPicture + "\").height = 300;'"
+    + "onmouseout = 'document.getElementById(\""+ products[i].productPicture + "\").width = 150;"
+    + "document.getElementById(\""+ products[i].productPicture + "\").height = 150;'> </td>"
+    + "<td>"+ products[i].productName +"</td>"
+    + "<td>$"+ products[i].productPrice +"</td>"
+    + "<td>"+ products[i].productDetails +"</td>"
+    +"</tr>"
+  //   <th>Product Name</th>
+  //   <th>Product Price</th>
+  //   <th>Additional Info</th>
+  // </tr>
+};
+listOfProducts += "</table>";
+console.log(listOfProducts);
+document.getElementById('products').innerHTML = listOfProducts;
+</script>
