@@ -1,9 +1,0 @@
-Name: 
-Price:
-Tags: 
-Image:
-
-The form should allow the user to enter the product identifier, 
-quantity, first name, last name, phone number, shipping address, 
-shipping method (e.g., overnight, 2-days expedited, 6-days ground), 
-credit card information, and anything else that you think makes sense for your business.

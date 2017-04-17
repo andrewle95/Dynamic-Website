@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div class = 'containter'>
+    <nav>
+      <img id = 'picture'>
+    </nav>
+    <article>
+      <h1 id = name></h1>
+      <p id = price></p>
+    </article>
+  </div>
+</body>
+</html>
+
+<script>
+var productName = 'Ray Bans';
+var productPrice = '12.00';
+var productPicture = 'C:\\Users\\andre\\Documents\\GitHub\\Dynamic-Website\\resource\\ray-ban.jpg';
+
+document.getElementById('name').innerHTML = productName;
+document.getElementById('price').innerHTML = productPrice;
+document.getElementById('picture').src = productPicture;
+</script>
+
+<style
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+</style>

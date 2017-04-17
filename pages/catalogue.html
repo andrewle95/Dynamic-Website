@@ -1,7 +1,81 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <base href="C:/Users/andre/Documents/GitHub/Dynamic-Website/">
+</head>
 <body>
   <h1> Glasses World Wide </h1>
   <h2> Displaying all merchandise goes here </h2>
+
+  <div id = 'items'></div>
 </body>
 </html>
+
+<script>
+/*<img src = 'resource/Glass 1.jpeg' width=150 height=150>
+<h1> Sunset Glasses </h1>
+<p> 60.00 </p>*/
+var products = [
+  {
+    productPicture: 'Glass 1.jpeg',
+    productName: 'Sunset Glasses',
+    productPrice: '60.00'
+  },
+  {
+    productPicture: 'Glass 2.jpeg',
+    productName: 'Science Lab',
+    productPrice: '69.99'
+  },
+  {
+    productPicture: 'Glass 3.png',
+    productName: 'Runner Glasses',
+    productPrice: '79.99'
+  },
+  {
+    productPicture: 'Glass 4.png',
+    productName: 'Beach Paradise',
+    productPrice: '89.99'
+  },
+  {
+    productPicture: 'Glass 5.jpg',
+    productName: 'Protective Glasses',
+    productPrice: '99.99'
+  },
+  {
+    productPicture: 'Glass 6.jpg',
+    productName: 'Classic RayBans',
+    productPrice: '120.99'
+  },
+  {
+    productPicture: 'Glass 7.jpg',
+    productName: 'FBI Glasses',
+    productPrice: '75.99'
+  },
+  {
+    productPicture: 'Glass 8.jpg',
+    productName: 'The Magic School Bus Glasses',
+    productPrice: '86.99'
+  },
+  {
+    productPicture: 'Glass 9.jpg',
+    productName: 'Sci-Fi Glasses',
+    productPrice: '45.99'
+  },
+  {
+    productPicture: 'Glass 10.jpg',
+    productName: 'Beach Horizon',
+    productPrice: '20.99'
+  }
+]
+var i = 0;
+var listOfProducts = "";
+for (i = 0; i < products.length; i++){
+  listOfProducts = listOfProducts
+  + "<img src = 'resource/" + products[i].productPicture + "' width=150 height=150>"
+  + "<h1>" + products[i].productName + "</h1>"
+  + "<p> $" + products[i].productPrice + "<p>"
+  + "</br>"
+};
+console.log(listOfProducts);
+document.getElementById('items').innerHTML = listOfProducts;
+</script>
