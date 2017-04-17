@@ -6,15 +6,11 @@
 <body>
   <h1> Glasses World Wide </h1>
   <h2> Displaying all merchandise goes here </h2>
-
   <div id = 'items'></div>
 </body>
 </html>
 
 <script>
-/*<img src = 'resource/Glass 1.jpeg' width=150 height=150>
-<h1> Sunset Glasses </h1>
-<p> 60.00 </p>*/
 var products = [
   {
     productPicture: 'Glass 1.jpeg',
@@ -71,7 +67,13 @@ var i = 0;
 var listOfProducts = "";
 for (i = 0; i < products.length; i++){
   listOfProducts = listOfProducts
-  + "<img src = 'resource/" + products[i].productPicture + "' width=150 height=150>"
+  + "<img id = '" + products[i].productPicture + "' src = 'resource/"
+  + products[i].productPicture
+  + "' width=150 height=150"
+  + " onmouseover = 'document.getElementById(\""+ products[i].productPicture + "\").width = 300;"
+  + "document.getElementById(\""+ products[i].productPicture + "\").height = 300;'"
+  + "onmouseout = 'document.getElementById(\""+ products[i].productPicture + "\").width = 150;"
+  + "document.getElementById(\""+ products[i].productPicture + "\").height = 150;'>"
   + "<h1>" + products[i].productName + "</h1>"
   + "<p> $" + products[i].productPrice + "<p>"
   + "</br>"

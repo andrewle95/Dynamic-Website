@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <base href="C:/Users/andre/Documents/GitHub/Dynamic-Website/">
 <style>
 div.container {
     width: 100%;
@@ -48,8 +49,14 @@ article {
 </header>
 
 <nav>
-  <img src = 'C:\\Users\\andre\\Documents\\GitHub\\Dynamic-Website\\resource\\ray-ban.jpg'
-  width = 150 height = 150>
+  <img id = 'picture' src = 'resource/Glass 1.jpeg'
+  width = 150 height = 150
+  onmouseover = '
+    document.getElementById("picture").width = 300;
+    document.getElementById("picture").height = 300;'
+  onmouseout = '
+    document.getElementById("picture").width = 150;
+    document.getElementById("picture").height = 150;'>
 </nav>
 
 <article>

@@ -10,6 +10,8 @@
       </br>
       Last Name: <input type="text" name="lastName">
       </br>
+      Email: <input type="text" name="email">
+      </br>
       Phone Number: <input type="text" name="phoneNumber">
       </br>
       Shipping Address: <input type="text" name="shippingAddress">
@@ -20,7 +22,7 @@
       </br>
 
       <input type="radio" name="shippingMethod" id="overnight" value="overnight" />
-      <label for="overnight">overnight</label>
+      <label for="overnight">Overnight</label>
       <br/>
       <input type="radio" name="shippingMethod" id="2-days expedited" value="2-days expedited" />
       <label for="2-days expedited">2-days expedited</label>
@@ -29,16 +31,32 @@
       <label for="6-days ground">6-days ground</label>
       <br/>
 
-      <button type="button" onclick="validateForm()"> Submit </button>
+      <button type="button" onclick="createEmail()"> Submit </button>
     </form>
-  <p id = formInformation>  </p>
+  <div id = recieptInformation>  </div>
 </body>
 </html>
 
 <script>
+var emailLetter = '';
+function createEmail() {
+  emailLetter += "<p>Dear Customer, </br> Customer Info: </br>"
+  + "Customer Name: " + document.forms["myForm"]["firstName"].value
+  + " " + document.forms["myForm"]["lastName"].value + "</br>"
+  + "Customer Email: " + document.forms["myForm"]["email"].value + "</br>"
+  + "Customer Phone Number: " + document.forms["myForm"]["email"].value + "</br>"
+  + "Customer Shipping Address: " + document.forms["myForm"]["email"].value + "</br>"
+  + "Customer Credit Card Number: " + document.forms["myForm"]["email"].value + "</br>"
+  + "Chosen Shipping Method: " + document.forms["myForm"]["shippingMethod"].value + "</br>"
+  + "Order Info goes here!!! </br>"
+  + "Thank you for purchasing. </p>";
+  document.getElementById('recieptInformation').innerHTML = emailLetter;
+}
 function validateForm() {
-  var x = document.forms["myForm"]["firstName"].value;
-  document.getElementById('formInformation').innerHTML = x;
+
 }
 
+function checkBlank(){
+
+}
 </script>
