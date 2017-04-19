@@ -1,84 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base href="C:/Users/andre/Documents/GitHub/Dynamic-Website/">
-<style>
-div.container {
+  <base href="C:/Users/andrew/Documents/GitHub/Dynamic-Website/">
+  <style>
+  div.container {
     width: 100%;
     border: 1px solid gray;
-}
+  }
 
-header, footer {
+  header, footer {
     padding: 1em;
     color: white;
     background-color: black;
     clear: left;
     text-align: center;
-}
+  }
 
-nav {
+  nav {
     float: left;
     max-width: 160px;
     margin: 0;
     padding: 1em;
-}
+  }
 
-nav ul {
+  nav ul {
     list-style-type: none;
     padding: 0;
-}
+  }
 
-nav ul a {
+  nav ul a {
     text-decoration: none;
-}
+  }
 
-article {
+  article {
     margin-left: 170px;
     border-left: 1px solid gray;
     padding: 1em;
     overflow: hidden;
-}
-table {
+  }
+  table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-}
+  }
 
-td, th {
+  td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-}
-</style>
+  }
+  </style>
 </head>
 <body>
 
-<div class="container">
+  <div class="container">
 
-<header>
-   <h1>Glasses Sooo Cool INC</h1>
-</header>
+    <header>
+      <h1>Glasses Sooo Cool INC</h1>
+    </header>
+    <div id = 'purchaseInfo'>
+      <p> Order Info will come here </p>
+    </div>
+    <article>
+      <img id = 'sPicture'>
+      <h1 id = 'sName'></h1>
+      <p id = 'sPrice'></p>
+      <p id = 'details'></p>
+    </article>
+    <div id = 'products'></div>
 
-<nav>
-  <img id = 'picture' src = 'resource/Glass 1.jpeg'
-  width = 150 height = 150
-  onmouseover = '
-    document.getElementById("picture").width = 300;
-    document.getElementById("picture").height = 300;'
-  onmouseout = '
-    document.getElementById("picture").width = 150;
-    document.getElementById("picture").height = 150;'>
-</nav>
+    <footer>Sorry Michael I just copied this style from W3Schools :( </footer>
 
-<article>
-  <h1>Ray Bans</h1>
-  <p>$12.00</p>
-</article>
-<div id = 'products'></div>
-
-<footer>Sorry Michael I just copied this style from W3Schools :( </footer>
-
-</div>
+  </div>
 
 </body>
 </html>
@@ -141,23 +134,46 @@ var listOfProducts = "<table>";
 listOfProducts += "<tr><th>Product image</th><th>Product Name</th><th>Product Price</th><th>Additional Info</th></tr>"
 for (i = 0; i < products.length; i++){
   listOfProducts += "<tr>"
-    + "<td>" + "<img id = '" + products[i].productPicture + "' src = 'resource/"
-    + products[i].productPicture
-    + "' width=150 height=150"
-    + " onmouseover = 'document.getElementById(\""+ products[i].productPicture + "\").width = 300;"
-    + "document.getElementById(\""+ products[i].productPicture + "\").height = 300;'"
-    + "onmouseout = 'document.getElementById(\""+ products[i].productPicture + "\").width = 150;"
-    + "document.getElementById(\""+ products[i].productPicture + "\").height = 150;'> </td>"
-    + "<td>"+ products[i].productName +"</td>"
-    + "<td>$"+ products[i].productPrice +"</td>"
-    + "<td>"+ products[i].productDetails +"</td>"
-    +"</tr>"
+  + "<td>" + "<img id = '" + products[i].productPicture + "' src = 'resource/"
+  + products[i].productPicture
+  + "' width=150 height=150"
+  + " onmouseover = 'enlargePicture(" + products[i].productPicture + ")'"
+  + "onmouseout = 'normalPicture(" + products[i].productPicture + ")'"
+  + "onclick = \"insertProductInfo("+ products[i].productName + ", " + products[i].productPrice + ", " + products[i].productPicture + ", 'Addition Details')\"> </td>"
+  + "<td>"+ products[i].productName +"</td>"
+  + "<td>$"+ products[i].productPrice +"</td>"
+  + "<td>"+ products[i].productDetails +"</td>"
+  +"</tr>"
   //   <th>Product Name</th>
   //   <th>Product Price</th>
   //   <th>Additional Info</th>
   // </tr>
 };
 listOfProducts += "</table>";
-console.log(listOfProducts);
 document.getElementById('products').innerHTML = listOfProducts;
+
+function insertProductInfo(name, price, image, details){
+  insertPicture(image);
+  document.getElementById('sName').innerHTML = name;
+  document.getElementById('sPrice').innerHTML = price;
+  document.getElementById('details').innerHTML = details;
+};
+
+function enlargePicture(pictureName){
+  document.getElementById(pictureName).width = 300;
+  document.getElementById(pictureName).height = 300;
+};
+function normalPicture(pictureName){
+  document.getElementById(pictureName).width = 150;
+  document.getElementById(pictureName).height = 150;
+};
+function insertPicture(image){
+  var pictureAddress = document.getElementById('picture');
+  pictureAddress.src = image;
+  pictureAddress.width = 150;
+  pictureAddress.height = 150;
+  pictureAddress.onmouseover = "enlargePicture('picture')";
+  pictureAddress.onmouseout = "normalPicture('picture')";
+  pictureAddress.onclick = "insertProductInfo(products[0].productName, products[0].productPrice, products[0].productPicture, 'Addition Details')";
+};
 </script>
