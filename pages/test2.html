@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="C:/Users/andre/Documents/GitHub/Dynamic-Website/">
+  <h1>hello</h1>
+</head>
+<body>
+  <div id = 'purchaseInfo'>
+    <img id = 'pic'>
+    <h1 id = 'name'></h1>
+    <p id = 'price'></p>
+    <p id = 'details'></p>
+  </div>
+  <h1> welcome </h1>
+  <img id = 'picture' src = 'resource/Glass 1.jpeg'
+  width = 150 height = 150
+  onmouseover = '
+  document.getElementById("picture").width = 300;
+  document.getElementById("picture").height = 300;'
+  onmouseout = '
+  document.getElementById("picture").width = 150;
+  document.getElementById("picture").height = 150;'
+  onclick = 'insertProductInfo()'
+</body>
+</html>
+
+<script>
+//'insertProductInfo(products[0].productName, products[0].productPrice, products[0].productPicture, Addition Details)'
+var products = [
+  {
+    productPicture: 'Glass 1.jpeg',
+    productName: 'Sunset Glasses',
+    productPrice: '60.00'
+  }
+];
+// function insertProductInfo(name, price, image, details){
+//   document.getElementById('purchaseInfo').innerHTML = 'lol';
+// };
+function insertProductInfo(){
+  document.getElementById('name').innerHTML = 'Sunrise Shades';
+  document.getElementById('price').innerHTML = 12.99;
+  document.getElementById('pic').src = 'resource/Glass 1.jpeg';
+  document.getElementById('pic').width = 150;
+  document.getElementById('pic').height = 150;
+}
+</script>

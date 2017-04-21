@@ -2,6 +2,7 @@
 <html>
 <head>
   <base href="C:/Users/andre/Documents/GitHub/Dynamic-Website/">
+  <A HREF="http://www.computerhope.com/"><IMG SRC="http://www.computerhope.com/logo.gif" alt="Logo"></A>
 </head>
 <body>
   <h1> Glasses World Wide </h1>
@@ -10,74 +11,38 @@
 </body>
 </html>
 
+<script src = "C:/Users/andre/Documents/GitHub/Dynamic-Website/data.js"></script>
+
 <script>
-var products = [
-  {
-    productPicture: 'Glass 1.jpeg',
-    productName: 'Sunset Glasses',
-    productPrice: '60.00'
-  },
-  {
-    productPicture: 'Glass 2.jpeg',
-    productName: 'Science Lab',
-    productPrice: '69.99'
-  },
-  {
-    productPicture: 'Glass 3.png',
-    productName: 'Runner Glasses',
-    productPrice: '79.99'
-  },
-  {
-    productPicture: 'Glass 4.png',
-    productName: 'Beach Paradise',
-    productPrice: '89.99'
-  },
-  {
-    productPicture: 'Glass 5.jpg',
-    productName: 'Protective Glasses',
-    productPrice: '99.99'
-  },
-  {
-    productPicture: 'Glass 6.jpg',
-    productName: 'Classic RayBans',
-    productPrice: '120.99'
-  },
-  {
-    productPicture: 'Glass 7.jpg',
-    productName: 'FBI Glasses',
-    productPrice: '75.99'
-  },
-  {
-    productPicture: 'Glass 8.jpg',
-    productName: 'The Magic School Bus Glasses',
-    productPrice: '86.99'
-  },
-  {
-    productPicture: 'Glass 9.jpg',
-    productName: 'Sci-Fi Glasses',
-    productPrice: '45.99'
-  },
-  {
-    productPicture: 'Glass 10.jpg',
-    productName: 'Beach Horizon',
-    productPrice: '20.99'
-  }
-]
 var i = 0;
-var listOfProducts = "";
+var parent = document.getElementById('items');
 for (i = 0; i < products.length; i++){
-  listOfProducts = listOfProducts
-  + "<img id = '" + products[i].productPicture + "' src = 'resource/"
-  + products[i].productPicture
-  + "' width=150 height=150"
-  + " onmouseover = 'document.getElementById(\""+ products[i].productPicture + "\").width = 300;"
-  + "document.getElementById(\""+ products[i].productPicture + "\").height = 300;'"
-  + "onmouseout = 'document.getElementById(\""+ products[i].productPicture + "\").width = 150;"
-  + "document.getElementById(\""+ products[i].productPicture + "\").height = 150;'>"
-  + "<h1>" + products[i].productName + "</h1>"
-  + "<p> $" + products[i].productPrice + "<p>"
-  + "</br>"
+  var space = document.createElement('br');
+  var product = document.createElement('img');
+  var productLink = document.createElement('a');
+  product.src = products[i].productPicture;
+  product.alt = "not found";
+  product.height = 150;
+  product.width = 150;
+
+  product.addEventListener("mouseover", function(){
+    this.height = 300;
+    this.width = 300;
+  });
+  product.addEventListener("mouseout", function(){
+    this.height = 150;
+    this.width = 150;
+  });
+  productLink.href = "C:/Users/andre/Documents/GitHub/Dynamic-Website/pages/product.html?" + i;
+  productLink.appendChild(product);
+  parent.appendChild(productLink);
+
+  var nameText = document.createElement('h1');
+  nameText.textContent = products[i].productName;
+  parent.appendChild(nameText);
+
+  var priceText = document.createElement('p');
+  priceText.textContent = products[i].productPrice;
+  parent.appendChild(priceText);
 };
-console.log(listOfProducts);
-document.getElementById('items').innerHTML = listOfProducts;
 </script>
