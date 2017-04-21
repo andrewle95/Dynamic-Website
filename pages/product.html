@@ -1,46 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base href="C:/Users/andrew/Documents/GitHub/Dynamic-Website/">
+  <base href="C:/Users/andre/Documents/GitHub/Dynamic-Website/">
 </head>
 <body>
-  <div class = 'containter'>
-    <nav>
-      <img id = 'picture' width = 200 height = 200>
-    </nav>
-    <article>
-      <h1 id = name></h1>
-      <p id = price></p>
-    </article>
+  <div id = productInformation>
+    <img id = 'picture' width = 200 height = 200>
+    <h1 id = name></h1>
+    <p id = price></p>
   </div>
+  <h2> Order: </h2>
+    <p> Order Information goes here: quantity </p>
+  <h2> Order Form </h2>
+    <form name="myForm">
+      First Name: <input type="text" name="firstName">
+      </br>
+      Last Name: <input type="text" name="lastName">
+      </br>
+      Email: <input type="text" name="email">
+      </br>
+      Phone Number: <input type="text" name="phoneNumber">
+      </br>
+      Shipping Address: <input type="text" name="shippingAddress">
+      </br>
+      Credit Card Number : <input type="text" name="creditCardNumber">
+      </br>
+      <label>Shipping Methods: </label>
+      </br>
+
+      <input type="radio" name="shippingMethod" id="overnight" value="overnight" />
+      <label for="overnight">Overnight</label>
+      <br/>
+      <input type="radio" name="shippingMethod" id="2-days expedited" value="2-days expedited" />
+      <label for="2-days expedited">2-days expedited</label>
+      <br/>
+      <input type="radio" name="shippingMethod" id="6-days ground" value="6-days ground" />
+      <label for="6-days ground">6-days ground</label>
+      <br/>
+
+      <button type="button" onclick="createEmail()"> Submit </button>
+    </form>
+  <div id = recieptInformation>  </div>
 </body>
 </html>
 
-<script>
-var productName = 'Ray Bans';
-var productPrice = '12.00';
-var productPicture = 'resource/Glass 1.jpeg';
+<script src = "C:/Users/andre/Documents/GitHub/Dynamic-Website/data.js"></script>
 
-document.getElementById('name').innerHTML = productName;
-document.getElementById('price').innerHTML = productPrice;
-document.getElementById('picture').src = productPicture;
+<script>
+var product = window.location.search;
+product = product.slice(1);
+document.getElementById('name').innerHTML = products[product].productName;
+document.getElementById('price').innerHTML = products[product].productPrice;
+document.getElementById('picture').src = products[product].productPicture;
 </script>
 
-<style
-div.container {
-    width: 100%;
-    border: 1px solid gray;
-}
-nav {
-    float: left;
-    max-width: 160px;
-    margin: 0;
-    padding: 1em;
-}
-article {
-    margin-left: 170px;
-    border-left: 1px solid gray;
-    padding: 1em;
-    overflow: hidden;
-}
+<style>
 </style>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base href="C:/Users/andrew/Documents/GitHub/Dynamic-Website/">
+  <base href="C:/Users/andre/Documents/GitHub/Dynamic-Website/">
   <style>
   div.container {
     width: 100%;
@@ -138,12 +138,15 @@ for (i = 0; i < products.length; i++){
   + products[i].productPicture
   + "' width=150 height=150"
   + " onmouseover = 'enlargePicture(" + products[i].productPicture + ")'"
-  + "onmouseout = 'normalPicture(" + products[i].productPicture + ")'"
-  + "onclick = \"insertProductInfo("+ products[i].productName + ", " + products[i].productPrice + ", " + products[i].productPicture + ", 'Addition Details')\"> </td>"
+  + "onmouseout = 'normalPicture(" + products[i].productPicture + ")'</td>"
   + "<td>"+ products[i].productName +"</td>"
   + "<td>$"+ products[i].productPrice +"</td>"
   + "<td>"+ products[i].productDetails +"</td>"
   +"</tr>"
+  var img = document.createElement('img')
+  img.addEventListener('mouseover', function(event) {
+    enlargePicture(event.target);
+  })
   //   <th>Product Name</th>
   //   <th>Product Price</th>
   //   <th>Additional Info</th>
@@ -151,6 +154,7 @@ for (i = 0; i < products.length; i++){
 };
 listOfProducts += "</table>";
 document.getElementById('products').innerHTML = listOfProducts;
+document.getElementById(products[0].productPicture).onmouseover = "enlargePicture('products[0].productPicture)";
 
 function insertProductInfo(name, price, image, details){
   insertPicture(image);
@@ -164,8 +168,8 @@ function enlargePicture(pictureName){
   document.getElementById(pictureName).height = 300;
 };
 function normalPicture(pictureName){
-  document.getElementById(pictureName).width = 150;
-  document.getElementById(pictureName).height = 150;
+  document.getElementById("'" + pictureName + "'").width = 150;
+  document.getElementById("'" + pictureName + "'").height = 150;
 };
 function insertPicture(image){
   var pictureAddress = document.getElementById('picture');
@@ -176,4 +180,8 @@ function insertPicture(image){
   pictureAddress.onmouseout = "normalPicture('picture')";
   pictureAddress.onclick = "insertProductInfo(products[0].productName, products[0].productPrice, products[0].productPicture, 'Addition Details')";
 };
+
+function createIMG(picture){
+
+}
 </script>
