@@ -17,17 +17,17 @@
       </br>
       Last Name: <input type="text" name="lastName" placeholder="ex. Smith" pattern = "^[a-zA-Z]+$" required>
       </br>
-      Phone Number: <input type="text" name="phoneNumber" placeholder = "ex. 7896543215" required>
+      Phone Number: <input type="text" name="phoneNumber" placeholder = "ex. 7896543215" pattern = "\d{10}" required>
       </br>
-      Street Address: <input type="text" name="streetAddress" placeholder="ex. 1600 Pennsylvania Ave" required>
+      Street Address: <input type="text" name="streetAddress" placeholder="ex. 1600 Pennsylvania Ave" pattern = "[\w ]+" required>
       </br>
-      City: <input type="text" name="city" placeholder="ex. Los Angeles" required>
+      City: <input type="text" name="city" placeholder="ex. Los Angeles"  pattern = "[^\d]+"required>
       </br>
-      State: <input type="text" name="state" placeholder="ex. CA" required>
+      State: <input type="text" name="state" placeholder="ex. CA" pattern = "[a-zA-Z]{2}" required>
       </br>
-      Zip Code: <input type="text" name="zipCode" placeholder="ex. 90032" required>
+      Zip Code: <input type="text" name="zipCode" placeholder="ex. 90032" pattern = "[1-9]\d{4}" required>
       </br>
-      Credit Card Number : <input type="text" name="creditCardNumber" placeholder="ex. " required>
+      Credit Card Number : <input type="text" name="creditCardNumber" placeholder="ex. Visa Card Only" pattern = "4\d{15}" required>
       </br>
       <label>Shipping Methods: </label>
       </br>
