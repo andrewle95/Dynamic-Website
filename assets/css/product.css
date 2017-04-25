@@ -1,0 +1,38 @@
+/*start of common css*/
+
+body {
+  text-align: center;
+  font-family: Tahoma;
+}
+
+header{
+	border-bottom: 3px solid black;
+  text-align:center;
+}
+
+.header ul{
+  padding: 0;
+}
+
+.header li {
+    display: inline-block;
+    padding: 5px 5px;
+    text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  border-top: 3px solid black;
+  margin-top: 20px;
+}
+
+/*end of common css*/
+
+.content {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.click-me {
+  font-size: 3em;
+}
