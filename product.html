@@ -8,7 +8,7 @@
   <div id = productInformation>
     <img id = 'picture' width = 200 height = 200>
     <h1 id = name></h1>
-    <p id = price></p>
+    <p id = details></p>
   </div>
   <h2> Order Form </h2>
     <form name="myForm">
@@ -48,14 +48,14 @@
 
 <script>
 var product = window.location.search;
-product = product.slice(1);
-document.title = products[product].productName;
-document.getElementById('name').innerHTML = products[product].productName;
-document.getElementById('price').innerHTML = products[product].productPrice;
-document.getElementById('picture').src = products[product].productPicture;
+product =products[product.slice(1)];
+document.title = product.productName;
+document.getElementById('name').innerHTML = product.productName;
+document.getElementById('picture').src = product.productPicture;
+var information = document.createElement('p');
+var details = product.additionalDetails;
+information.textContent = "Price: " + product.productPrice;
+document.getElementById.innerHTML = information;
 </script>
-
-<style>
-</style>
 </body>
 </html>
