@@ -11,37 +11,39 @@
     <p id = price></p>
   </div>
   <h2> Order Form </h2>
+    <p id =
     <form name="myForm">
-      First Name: <input type="text" name="firstName" pattern = "/./" placeholder="Hello/">
+      First Name: <input type="text" name="firstName" placeholder="ex. Bob" pattern = "^[a-zA-Z]+$" required >
       </br>
-      Last Name: <input type="text" name="lastName">
+      Last Name: <input type="text" name="lastName" placeholder="ex. Smith" pattern = "^[a-zA-Z]+$" required>
       </br>
-      Email: <input type="text" name="email">
+      Phone Number: <input type="text" name="phoneNumber" placeholder = "ex. 7896543215" required>
       </br>
-      Phone Number: <input type="text" name="phoneNumber">
+      Street Address: <input type="text" name="streetAddress" placeholder="ex. 1600 Pennsylvania Ave" required>
       </br>
-      Shipping Address: <input type="text" name="shippingAddress">
+      City: <input type="text" name="city" placeholder="ex. Los Angeles" required>
       </br>
-      Credit Card Number : <input type="text" name="creditCardNumber">
+      State: <input type="text" name="state" placeholder="ex. CA" required>
+      </br>
+      Zip Code: <input type="text" name="zipCode" placeholder="ex. 90032" required>
+      </br>
+      Credit Card Number : <input type="text" name="creditCardNumber" placeholder="ex. " required>
       </br>
       <label>Shipping Methods: </label>
       </br>
-
-      <input type="radio" name="shippingMethod" id="overnight" value="overnight" />
+      <input type="radio" name="shippingMethod" id="overnight" value="overnight" required>
       <label for="overnight">Overnight</label>
       <br/>
-      <input type="radio" name="shippingMethod" id="2-days expedited" value="2-days expedited" />
+      <input type="radio" name="shippingMethod" id="2-days expedited" value="2-days expedited" required>
       <label for="2-days expedited">2-days expedited</label>
       <br/>
-      <input type="radio" name="shippingMethod" id="6-days ground" value="6-days ground" />
+      <input type="radio" name="shippingMethod" id="6-days ground" value="6-days ground" required>
       <label for="6-days ground">6-days ground</label>
       <br/>
-
       <button type="submit">Submit </button>
     </form>
-  <div id = recieptInformation>  </div>
 
-<script src = "data.js"></script>
+<script src = "/assets/js/data.js"></script>
 
 <script>
 var product = window.location.search;
