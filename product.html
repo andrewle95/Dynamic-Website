@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base href="C:/Users/andre/Documents/GitHub/Dynamic-Website/">
+  <meta charset ="utf-8">
+  <title> </title>
 </head>
 <body>
   <div id = productInformation>
@@ -9,11 +10,9 @@
     <h1 id = name></h1>
     <p id = price></p>
   </div>
-  <h2> Order: </h2>
-    <p> Order Information goes here: quantity </p>
   <h2> Order Form </h2>
     <form name="myForm">
-      First Name: <input type="text" name="firstName">
+      First Name: <input type="text" name="firstName" pattern = "/./" placeholder="Hello/">
       </br>
       Last Name: <input type="text" name="lastName">
       </br>
@@ -38,17 +37,16 @@
       <label for="6-days ground">6-days ground</label>
       <br/>
 
-      <button type="button" onclick="createEmail()"> Submit </button>
+      <button type="submit">Submit </button>
     </form>
   <div id = recieptInformation>  </div>
-</body>
-</html>
 
-<script src = "C:/Users/andre/Documents/GitHub/Dynamic-Website/data.js"></script>
+<script src = "data.js"></script>
 
 <script>
 var product = window.location.search;
 product = product.slice(1);
+document.title = products[product].productName;
 document.getElementById('name').innerHTML = products[product].productName;
 document.getElementById('price').innerHTML = products[product].productPrice;
 document.getElementById('picture').src = products[product].productPicture;
@@ -56,3 +54,5 @@ document.getElementById('picture').src = products[product].productPicture;
 
 <style>
 </style>
+</body>
+</html>
