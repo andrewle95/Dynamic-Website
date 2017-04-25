@@ -7,8 +7,8 @@
 <body>
   <div id = productInformation>
     <img id = 'picture' width = 200 height = 200>
-    <h1 id = name></h1>
-    <p id = price></p>
+    <h1 id = 'name'></h1>
+    <p id = "details"></p>
   </div>
   <h2> Order Form </h2>
     <form name="myForm">
@@ -48,14 +48,45 @@
 
 <script>
 var product = window.location.search;
-product = product.slice(1);
-document.title = products[product].productName;
-document.getElementById('name').innerHTML = products[product].productName;
-document.getElementById('price').innerHTML = products[product].productPrice;
-document.getElementById('picture').src = products[product].productPicture;
+product =products[product.slice(1)];
+var details = product.additionalDetails;
+document.title = product.productName;
+document.getElementById('name').innerHTML = product.productName;
+document.getElementById('picture').src = product.productPicture;
+var price = document.createElement('p');
+price.textContent = "Price: $" + product.productPrice;
+document.getElementById('details').appendChild(price);
+
+var detailsTitle = document.createElement('h3');
+detailsTitle.textContent = "Additional Details";
+document.getElementById('details').appendChild(detailsTitle);
+
+
+var brand = document.createElement('p');
+brand.textContent = "Brand: " + details.brand;
+document.getElementById('details').appendChild(brand);
+
+var color = document.createElement('p');
+color.textContent = "Color: " + details.color;
+document.getElementById('details').appendChild(color);
+
+var frame = document.createElement('p');
+frame.textContent = "Frame Material: " + details.frameMaterial;
+document.getElementById('details').appendChild(frame);
+
+var lens = document.createElement('p');
+lens.textContent = "Lens Material: " + details.lensMaterial;
+document.getElementById('details').appendChild(lens);
+
+var fit = document.createElement('p');
+fit.textContent = "Fit: " + details.fit;
+document.getElementById('details').appendChild(fit);
+
+var style = document.createElement('p');
+style.textContent = "Style: " + details.style;
+document.getElementById('details').appendChild(style);
+
 </script>
 
-<style>
-</style>
 </body>
 </html>
