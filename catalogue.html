@@ -3,23 +3,36 @@
 <head>
   <meta charset ="utf-8">
   <title>Glasses For Sale </title>
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/catalogue.css">
 </head>
 <body>
-  <h1> Glasses World Wide </h1>
-  <h2> Displaying all merchandise goes here </h2>
-  <div id = 'items'></div>
+
+  <header>
+    <div class = "header">
+      <h1> Glasses World Wide </h1>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalogue.html">Merchandise</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <h2> Please click on images of each product for more information! </h2>
+
+
+  <div id = 'items'> </div>
   <script src = "/assets/js/data.js"></script>
+
   <script>
   var i = 0;
   var parent = document.getElementById('items');
   for (i = 0; i < products.length; i++){
     var item = document.createElement('div');
-    var space = document.createElement('br');
     var product = document.createElement('img');
     var productLink = document.createElement('a');
     product.src = products[i].productPicture;
-    product.alt = "not found";
+    product.alt = products[i].productName;
     product.height = 150;
     product.width = 150;
 
@@ -31,6 +44,7 @@
       this.height = 150;
       this.width = 150;
     });
+
     productLink.href = "/product.html?" + i;
     productLink.appendChild(product);
     item.appendChild(productLink);
@@ -45,5 +59,18 @@
     parent.appendChild(item);
   };
   </script>
+
+
+  <footer>
+    <h1 class="copyright">
+      INF 124 - leaa1 & kcmin
+    </h1>
+
+    <p class = "names">
+      Andrew Le & Ki Chan Min
+    </p>
+
+  </footer>
+
 </body>
 </html>

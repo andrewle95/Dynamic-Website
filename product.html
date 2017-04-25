@@ -3,46 +3,59 @@
 <head>
   <meta charset ="utf-8">
   <title> </title>
+  <link rel="stylesheet" type="text/css" href="assets/css/catalogue.css">
 </head>
 <body>
+
+  <header>
+    <div class = "header">
+      <h1> Glasses World Wide </h1>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalogue.html">Merchandise</a></li>
+      </ul>
+    </div>
+  </header>
+
   <div id = productInformation>
     <img id = 'picture' width = 200 height = 200>
     <h1 id = 'name'></h1>
     <p id = "details"></p>
   </div>
   <h2> Order Form </h2>
-    <form name="myForm">
-      Quanity: <input type="text" name="quantity" pattern= "[1-9]\d*" required>
-      </br>
-      First Name: <input type="text" name="firstName" placeholder="ex. Bob" pattern = "^[a-zA-Z]+$" required>
-      </br>
-      Last Name: <input type="text" name="lastName" placeholder="ex. Smith" pattern = "^[a-zA-Z]+$" required>
-      </br>
-      Phone Number: <input type="text" name="phoneNumber" placeholder = "ex. 7896543215" pattern = "\d{10}" required>
-      </br>
-      Street Address: <input type="text" name="streetAddress" placeholder="ex. 1600 Pennsylvania Ave" pattern = "[\w ]+" required>
-      </br>
-      City: <input type="text" name="city" placeholder="ex. Los Angeles"  pattern = "[^\d]+"required>
-      </br>
-      State: <input type="text" name="state" placeholder="ex. CA" pattern = "[a-zA-Z]{2}" required>
-      </br>
-      Zip Code: <input type="text" name="zipCode" placeholder="ex. 90032" pattern = "[1-9]\d{4}" required>
-      </br>
-      Credit Card Number : <input type="text" name="creditCardNumber" placeholder="ex. Visa Card Only" pattern = "4\d{15}" required>
-      </br>
-      <label>Shipping Methods: </label>
-      </br>
-      <input type="radio" name="shippingMethod" id="overnight" value="overnight" required>
-      <label for="overnight">Overnight</label>
-      <br/>
-      <input type="radio" name="shippingMethod" id="2-days expedited" value="2-days expedited" required>
-      <label for="2-days expedited">2-days expedited</label>
-      <br/>
-      <input type="radio" name="shippingMethod" id="6-days ground" value="6-days ground" required>
-      <label for="6-days ground">6-days ground</label>
-      <br/>
-      <button type="submit">Submit </button>
-    </form>
+  <form name="myForm">
+    Quanity: <input type="text" name="quantity" pattern= "[1-9]\d*" required>
+  </br>
+  First Name: <input type="text" name="firstName" placeholder="ex. Bob" pattern = "^[a-zA-Z]+$" required>
+</br>
+Last Name: <input type="text" name="lastName" placeholder="ex. Smith" pattern = "^[a-zA-Z]+$" required>
+</br>
+Phone Number: <input type="text" name="phoneNumber" placeholder = "ex. 7896543215" pattern = "\d{10}" required>
+</br>
+Street Address: <input type="text" name="streetAddress" placeholder="ex. 1600 Pennsylvania Ave" pattern = "[\w ]+" required>
+</br>
+City: <input type="text" name="city" placeholder="ex. Los Angeles"  pattern = "[^\d]+"required>
+</br>
+State: <input type="text" name="state" placeholder="ex. CA" pattern = "[a-zA-Z]{2}" required>
+</br>
+Zip Code: <input type="text" name="zipCode" placeholder="ex. 90032" pattern = "[1-9]\d{4}" required>
+</br>
+Credit Card Number : <input type="text" name="creditCardNumber" placeholder="ex. Visa Card Only" pattern = "4\d{15}" required>
+</br>
+<label>Shipping Methods: </label>
+</br>
+<input type="radio" name="shippingMethod" id="overnight" value="overnight" required>
+<label for="overnight">Overnight</label>
+<br/>
+<input type="radio" name="shippingMethod" id="2-days expedited" value="2-days expedited" required>
+<label for="2-days expedited">2-days expedited</label>
+<br/>
+<input type="radio" name="shippingMethod" id="6-days ground" value="6-days ground" required>
+<label for="6-days ground">6-days ground</label>
+<br/>
+<button type="submit">Submit </button>
+</form>
 
 <script src = "/assets/js/data.js"></script>
 
@@ -87,6 +100,17 @@ style.textContent = "Style: " + details.style;
 document.getElementById('details').appendChild(style);
 
 </script>
+
+<footer>
+  <h1 class="copyright">
+    INF 124 - leaa1 & kcmin
+  </h1>
+
+  <p class = "names">
+    Andrew Le & Ki Chan Min
+  </p>
+
+</footer>
 
 </body>
 </html>
